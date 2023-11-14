@@ -1,0 +1,29 @@
+.shop-row{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 10px;
+}
+.shop-row .products{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Cart area design here */
+.order-summary{
+    background-color: #FF99004D;
+    padding: 10px 20px;
+}
+.order-summary .order-info ul{
+    list-style: none;
+}

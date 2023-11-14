@@ -5,6 +5,7 @@ import './index.css'
 import Header from './component/Header/Header'
 import './component/Header/Header.css'
 import Main from './component/Main/Main'
+import Shop from './component/Shop/Shop'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -12,6 +13,7 @@ function App() {
     <>
       <Header />
       <Main />
+      <Shop />
     </>
   )
 }
