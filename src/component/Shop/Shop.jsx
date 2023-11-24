@@ -3,7 +3,9 @@ import './Shop.css'
 import Product from './Product';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faTrashCan } from '@fortawesome/free-solid-svg-icons';
-import { addDB, getShoppingCart } from '../utilities/fakedb';
+import { addDB, deleteShoppingCart, getShoppingCart } from '../utilities/fakedb';
+import { Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
@@ -53,14 +55,12 @@ const Shop = () => {
         addDB(product.id)
     }
 
-    let total = 0;
-    let quantity = 0;
-    for(const pro of cart){
-        pro.quantity = pro.quantity || 1
-        total = total + pro.price * pro.quantity
-        quantity = quantity + pro.quantity;
-        console.log(pro.quantity)
+    const clearCart = () => {
+        deleteShoppingCart();
+        setCart([])
     }
+
+    
     
     return (
         <div>
@@ -74,26 +74,7 @@ const Shop = () => {
                                 })
                             }
                         </div>
-                        <div className="order-summary">
-                            <div className="cart-title">
-                                <h2>Order Summary</h2>
-                            </div>
-                            <div className="order-info">
-                                <ul>
-                                    <li>Selected Items: {quantity}</li>
-                                    <li>Total Price: ${total.toFixed(2)}</li>
-                                    <li>Total Shipping Charge: $50</li>
-                                    <li>Tax: $114</li>
-                                </ul>
-                            </div>
-                            <div className="total">
-                                <h3>Grand Total: 99$</h3>
-                            </div>
-                            <div className="cart-info">
-                                <button className='remove'>Clear Cart <FontAwesomeIcon icon={faTrashCan} /></button>
-                                <button className="review">Review Order <FontAwesomeIcon icon={faArrowRight} /></button>
-                            </div>
-                        </div>
+                        <Cart cart={cart} clearCart={clearCart} />
                     </div>
                 </div>
             </div>

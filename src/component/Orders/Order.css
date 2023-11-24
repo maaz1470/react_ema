@@ -1,0 +1,36 @@
+.orders{
+    margin: 80px 100px;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    gap: 100px;
+}
+
+.order-product .product{
+    border: 1px solid #95A0A7;
+    width: 100%;
+    border-radius: 5px;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.order-product .product .product-info{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.order-product .product .product-info .title h3{
+    color: #1C2B35;
+    font-size: 18px;
+}
+.order-product .product .product-image{
+    height: 50px;
+    width: 50px;
+}
+.order-product .product .product-image img{
+    height: 100%;
+    width: 100%;
+}

@@ -1,3 +1,6 @@
+.shop{
+    margin: 50px 0;
+}
 .shop-row{
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -121,9 +124,21 @@
     margin: 10px 0;
     cursor: pointer;
 }
+.cart-info a{
+    /* display: block; */
+    height: 45px;
+    width: 250px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0;
+    cursor: pointer;
+    background-color: #f90;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .cart-info button:nth-child(1){
     background-color: #FF3030;
-}
-.cart-info button:nth-child(2){
-    background-color: #f90;
 }
